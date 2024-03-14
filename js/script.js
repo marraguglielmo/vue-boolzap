@@ -7,9 +7,10 @@ createApp({
         return{
             contacts,
             contactIdActive: 0,
-            baloon:{
-                text: '',
-                time: ''
+            newMsg :{
+                date: 'adesso',
+                message: '',
+                status: 'sent'
             },
             inputMsg : ''
         }
@@ -17,17 +18,21 @@ createApp({
 
     methods: {
 
-        // sendMsg(){
-        //     this.baloon.text = this.inputMsg;
-        //     this.baloon.time = 'adesso'
+        addBaloon(){
 
-        //     this.inputMsg = '';
-        // },
+            if(this.inputMsg.length > 0){
+                this.newMsg.message = this.inputMsg;
+                    
+                this.contacts[this.contactIdActive].messages.push(this.newMsg);
+                console.log(this.contacts[this.contactIdActive].messages);
 
-        // addBaloon(){
+                this.inputMsg = '';
+            }
             
-        // }
-        
+
+        },
+
+
     },
 
     mounted(){

@@ -154,7 +154,7 @@
                             <p>
                                 {{msg.message}}
                             </p>
-                            <span class="time">{{baloon.time}}</span>
+                            <span class="time">{{newMsg.date}}</span>
                         </div>
 
 
@@ -172,8 +172,8 @@
                     <input
                         type="text"
                         placeholder="Scrivi un messaggio"
-                        v-model="inputMsg"
-                        
+                        v-model.trim="inputMsg"
+                        @keyup.enter="addBaloon"
                     >
                     <!-- icon microphone -->
                     <div class="microphone">
