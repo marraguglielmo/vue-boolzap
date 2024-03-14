@@ -6,6 +6,7 @@ createApp({
     data(){
         return{
             contacts,
+            contactIdActive: 0,
             baloon:{
                 text: '',
                 time: ''

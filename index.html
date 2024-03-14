@@ -75,8 +75,9 @@
 
                         <!-- card  -->
                         <div
-                            v-for="(contact, contactIndex) in contacts"
+                            v-for="(contact, contactId) in contacts"
                             class="card d-flex jc-start ai-center"
+                            @click="contactIdActive = contactId"
                         >
                             <!-- card img -->
                             <div class="card-img avatar">
@@ -128,7 +129,7 @@
 
                         <!-- msg sent -->
                         <div
-                            v-for="msg in contacts[0].messages"
+                            v-for="msg in contacts[contactIdActive].messages"
                             class="baloon"
                             :class="msg.status"
                         >
