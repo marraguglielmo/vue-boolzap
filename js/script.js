@@ -7,11 +7,6 @@ createApp({
         return{
             contacts,
             contactIdActive: 0,
-            newMsg :{
-                date: 'adesso',
-                message: '',
-                status: 'sent'
-            },
             inputMsg : ''
         }
     },
@@ -21,15 +16,20 @@ createApp({
         addBaloon(){
 
             if(this.inputMsg.length > 0){
-                this.newMsg.message = this.inputMsg;
+
+                const newMsg ={
+                    date: 'adesso',
+                    message: this.inputMsg,
+                    status: 'sent'
+                };
+                
                     
-                this.contacts[this.contactIdActive].messages.push(this.newMsg);
+                this.contacts[this.contactIdActive].messages.push(newMsg);
                 console.log(this.contacts[this.contactIdActive].messages);
 
                 this.inputMsg = '';
             }
             
-
         },
 
 
