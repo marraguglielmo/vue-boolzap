@@ -95,10 +95,6 @@ aside > *{
     justify-content: flex-start;
 }
 
-.as-end{
-    align-self:self-end;
-}
-
 .ai-center{
     align-items: center;
 }
@@ -234,7 +230,7 @@ aside .chat-list{
 
 .chat-list .card .time{
     position: absolute;
-    top: 27px;
+    top: 20px;
     right: 20px;
     font-size: .85rem;
     color: var(--txt-gray);
@@ -302,15 +298,18 @@ aside .chat-list{
 
 .baloon-box .received{
     background-color: white;
+    align-self:self-start;
 }
 
 .baloon-box .sent{
     background-color: var(--bg-sent);
+    align-self:self-end;
+
 }
 
 .chat-box .baloon-box .baloon .time{
     position: absolute;
-    bottom: 5px;
+    bottom: 7px;
     right: 10px;
     font-size: .7rem;
     color: var(--txt-gray);

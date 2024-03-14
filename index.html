@@ -73,8 +73,11 @@
                 <!-- chat list -->
                     <div class="chat-list">
 
-                        <!-- card 1 -->
-                        <div  v-for="contact in contacts" class="card d-flex jc-start ai-center ">
+                        <!-- card  -->
+                        <div
+                            v-for="(contact, contactIndex) in contacts"
+                            class="card d-flex jc-start ai-center"
+                        >
                             <!-- card img -->
                             <div class="card-img avatar">
                                 <img :src="contact.avatar" alt="avatar 1">
@@ -82,10 +85,10 @@
                             <!-- card txt -->
                             <div class="card-txt pl-md">
                                 <h2>{{contact.name}}</h2>
-                                <p>Lorem ipsum dolor sit amet.</p>
+                                <p>{{contact.messages[contact.messages.length-1].message}}</p>
                             </div>
                             <!-- time -->
-                            <span class="time">16:05</span>
+                            <span class="time">{{contact.messages[contact.messages.length-1].date}}</span>
                         </div>
 
                     </div>
@@ -124,7 +127,11 @@
                     <div class="baloon-box d-flex m-auto">
 
                         <!-- msg sent -->
-                        <div class="baloon sent as-end">
+                        <div
+                            v-for="msg in contacts[0].messages"
+                            class="baloon"
+                            :class="msg.status"
+                        >
                             <div>
                                 <i class="fa-solid fa-chevron-down"></i>
                                 
@@ -144,36 +151,11 @@
                             
                             <!-- /hidden menu -->
                             <p>
-                                {{baloon.text}}
+                                {{msg.message}}
                             </p>
                             <span class="time">{{baloon.time}}</span>
                         </div>
 
-                        <!-- msg received -->
-                        <div class="baloon received">
-                            <div>
-                                <i class="fa-solid fa-chevron-down"></i>
-                                
-                                <!-- hidden menu -->
-                                <div class="box-h">
-                                    <div class="menu-h d-flex">
-                                        <div class="d-flex jc-center ai-center">
-                                            Info messaggio
-                                        </div>
-                                        <div class="d-flex jc-center ai-center">
-                                            Segnala
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                            </div>
-                            <!-- /hidden menu -->
-                            <p>
-                                messaggio ricevuto
-                            </p>
-                            <span class="time">16:15</span>
-                        </div>
-                        
 
                     </div>
                 </div>
@@ -190,7 +172,7 @@
                         type="text"
                         placeholder="Scrivi un messaggio"
                         v-model="inputMsg"
-                        @keyup.enter="sendMsg"
+                        
                     >
                     <!-- icon microphone -->
                     <div class="microphone">

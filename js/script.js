@@ -16,16 +16,16 @@ createApp({
 
     methods: {
 
-        sendMsg(){
-            this.baloon.text = this.inputMsg;
-            this.baloon.time = 'adesso'
+        // sendMsg(){
+        //     this.baloon.text = this.inputMsg;
+        //     this.baloon.time = 'adesso'
 
-            this.inputMsg = '';
-        },
+        //     this.inputMsg = '';
+        // },
 
-        addBaloon(){
+        // addBaloon(){
             
-        }
+        // }
         
     },
 
