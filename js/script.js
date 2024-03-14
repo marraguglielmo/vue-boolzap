@@ -25,13 +25,27 @@ createApp({
                 
                     
                 this.contacts[this.contactIdActive].messages.push(newMsg);
-                console.log(this.contacts[this.contactIdActive].messages);
 
                 this.inputMsg = '';
             }
+            this.setBot();
             
         },
 
+        setBot(){
+            setTimeout(this.answerBot, 1000)
+        },
+
+        answerBot(){
+            const botMsg ={
+                date: 'adesso',
+                message: 'ok',
+                status: 'received'
+            };
+            
+                
+            this.contacts[this.contactIdActive].messages.push(botMsg);
+        }
 
     },
 

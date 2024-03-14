@@ -447,7 +447,8 @@ aside .chat-list{
     }
 
     .chat-box .baloon-box .baloon{
-        width: 75%;
+        width: fit-content;
+        max-width: 60%;
     }
     
 }
@@ -480,7 +481,8 @@ aside .chat-list{
     }
 
     .chat-box .baloon-box .baloon{
-        width: 80%;
+        width: fit-content;
+        max-width: 70%;
     }
 
     .main-input .smile,.microphone{
