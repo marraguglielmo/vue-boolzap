@@ -27,8 +27,9 @@ createApp({
                 this.contacts[this.contactIdActive].messages.push(newMsg);
 
                 this.inputMsg = '';
+
+                this.setBot();
             }
-            this.setBot();
             
         },
 
@@ -37,14 +38,15 @@ createApp({
         },
 
         answerBot(){
-            const botMsg ={
+                const botMsg ={
                 date: 'adesso',
                 message: 'ok',
                 status: 'received'
-            };
+                };
+                
+                this.contacts[this.contactIdActive].messages.push(botMsg);
             
                 
-            this.contacts[this.contactIdActive].messages.push(botMsg);
         }
 
     },
