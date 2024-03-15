@@ -4,14 +4,15 @@ const {DateTime} = luxon;
 const {createApp} = Vue;
 
 createApp({
-        data(){
-            return{
-                contacts,
-                contactIdActive: 0, //  indice del contatto cliccato (attivo)
-                inputMsg : '',
-                dataOra: ''
-            }
-        },
+    data(){
+        return{
+            contacts,
+            contactIdActive: 0, //  indice del contatto cliccato (attivo)
+            inputMsg : '',
+            dataOra: '',
+            contactToSearch: ''
+        }
+    },
 
     methods: {
 
@@ -59,6 +60,14 @@ createApp({
 
 
     },
+
+    computed:{
+        filteredContatti(){
+
+            return contacts
+        }
+    },
+
 
     mounted(){
         setInterval(this.dateMsg, 1000) 
