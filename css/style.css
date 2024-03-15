@@ -201,6 +201,7 @@ aside .contact-search{
 
 /* chat list */
 aside .chat-list{
+    background-color: whitesmoke;
     height: calc(100% - 240px);
     overflow: scroll;
     padding: 0;

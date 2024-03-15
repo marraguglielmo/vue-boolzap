@@ -55,7 +55,6 @@ createApp({
             .setLocale('it')
             .toFormat('dd/LL/yyyy hh:mm:ss');
 
-            return dataOra;
         },
 
 
@@ -64,7 +63,7 @@ createApp({
     computed:{
         filteredContatti(){
 
-            return contacts
+            return contacts.filter(contact => contact.name.toLowerCase().includes(this.contactToSearch.toLowerCase()))
         }
     },
 

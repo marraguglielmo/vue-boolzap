@@ -27,4 +27,4 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 4. al click del tasto enter scateno una funzione che controlla la lunghezza del testo inserito, se è ` maggiore di 0` do il valore dell'input a `message` e pusho l'oggetto contenente il nuomo messaggio nell'array `messages`
 5. al click dell'enter aggiungo una funzione che con un `setTimeout` fa comparire un messaggio ricevuto dopo 1 secondo dall'invio del nostro messaggio
 6. per stampare la data del messaggio creo una funzione che utilizza `luxon`, formatto la data e con un `setInterval` creo un orologio. la funzione restituisce una proprietà, che verrà stampata in `date`, facendola comparire nel messaggio
-7. creo la proprietà `contactToSearch`, con una computed sostituisco l'array da ciclare
+7. creo la proprietà `contactToSearch`, con una computed filtro l'array da ciclare, verificando che il nome del contatto sia incluso nell'input
