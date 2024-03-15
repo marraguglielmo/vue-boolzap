@@ -1,5 +1,6 @@
 import {contacts} from './db.js';
 
+const {DateTime} = luxon;
 const {createApp} = Vue;
 
 createApp({
@@ -7,7 +8,8 @@ createApp({
             return{
                 contacts,
                 contactIdActive: 0, //  indice del contatto cliccato (attivo)
-                inputMsg : ''
+                inputMsg : '',
+                dataOra: ''
             }
         },
 
@@ -18,7 +20,7 @@ createApp({
             if(this.inputMsg.length > 0){
                 // creo un nuovo oggetto newMsg
                 const newMsg ={
-                    date: 'adesso',
+                    date: this.dataOra,
                     message: this.inputMsg,
                     status: 'sent'
                 };
@@ -36,21 +38,29 @@ createApp({
 
         // creo una funzione che crea il messaggio mandato da un bot
         answerBot(){
-                const botMsg ={
-                date: 'adesso',
-                message: 'ok',
-                status: 'received'
-                };
-                // lo pusho nell'array per visualizzarlo
-                this.contacts[this.contactIdActive].messages.push(botMsg);
+                
+            const botMsg ={
+            date: this.dataOra,
+            message: 'ok',
+            status: 'received'
+            };
+            // lo pusho nell'array per visualizzarlo
+            this.contacts[this.contactIdActive].messages.push(botMsg);
             
-        }
-
+        },
         
+        dateMsg(){
+            this.dataOra = DateTime.now()
+            .setLocale('it')
+            .toFormat('dd/LL/yyyy hh:mm:ss');
+
+            return dataOra;
+        },
+
 
     },
 
     mounted(){
-
+        setInterval(this.dateMsg, 1000) 
     }
 }).mount('#app');

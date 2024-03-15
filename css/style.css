@@ -290,6 +290,7 @@ aside .chat-list{
     padding: 15px 35px 20px 15px;
     width: fit-content;
     max-width: 60%;
+    min-width: 21%;
     color: black;
     border-radius: 15px;
     margin-bottom: 10px;

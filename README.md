@@ -26,3 +26,4 @@ Ricerca utenti: scrivendo qualcosa nell’input a sinistra, vengono visualizzati
 3. nel ciclo, oltre all'elemento prendo anche l'indice. Ad ogni click sul contatto, **contactIdActive** prenderà il valore dell'indice del contatto cliccato, mostrandomi i messaggi di quell'oggetto, insieme all'immagine del contatto
 4. al click del tasto enter scateno una funzione che controlla la lunghezza del testo inserito, se è ` maggiore di 0` do il valore dell'input a `message` e pusho l'oggetto contenente il nuomo messaggio nell'array `messages`
 5. al click dell'enter aggiungo una funzione che con un `setTimeout` fa comparire un messaggio ricevuto dopo 1 secondo dall'invio del nostro messaggio
+6. per stampare la data del messaggio creo una funzione che utilizza `luxon`, formatto la data e con un `setInterval` creo un orologio. la funzione restituisce una proprietà, che verrà stampata in `date`, facendola comparire nel messaggio
