@@ -298,6 +298,10 @@ aside .chat-list{
     word-wrap: break-word;
 }
 
+.chat-box .baloon-box .baloon:hover i{
+    display: block;
+}
+
 .baloon-box .received{
     background-color: white;
     align-self:self-start;
@@ -319,6 +323,7 @@ aside .chat-list{
 }
 
 .chat-box .baloon-box .baloon i{
+    display: none;
     position: absolute;
     right: 10px;
 }
@@ -411,6 +416,10 @@ aside .chat-list{
 /* ***** MEDIA QUERY ***** */
 
 @media screen and (max-width: 992px) {
+
+    aside{
+        width: 100px;
+    }
 
     aside
     .notifications,
